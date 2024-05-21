@@ -1,0 +1,7 @@
+mutation addShow($input: AddShowInput!) {
+  addShow(input: $input) {
+    id
+    title
+  }
+}
+

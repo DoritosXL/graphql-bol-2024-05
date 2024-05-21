@@ -4,13 +4,14 @@ import { typeDefs } from './typedefs.js';
 import { resolvers } from './resolvers/query.js';
 import { ShowRepository } from './repositories/show-repository.js';
 import { EpisodeRepository } from './repositories/episode-repository.js';
+import { ShowContext } from './typings/show-context.js';
 
 const server = new ApolloServer({
 	typeDefs,
 	resolvers,
 });
 
-const { url } = await startStandaloneServer(server, {
+const { url } = await startStandaloneServer<ShowContext>(server, {
 	listen: { port: 4500 },
 	context: async ({ req }) => {
 		return {

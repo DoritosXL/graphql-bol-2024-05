@@ -6,6 +6,15 @@ export const typeDefs = `
     filterShowsByTitleAndReleaseYear(input: FilterShowsByTitleAndReleaseYearInput!): [Show!]!
   }
 
+  type Mutation {
+    addShow(input: AddShowInput!): Show!
+  }
+
+  input AddShowInput {
+    title: String!
+    releaseYear: Int!
+  }
+
   input FilterShowsByTitleAndReleaseYearInput {
     title: String
     releaseYear: Int

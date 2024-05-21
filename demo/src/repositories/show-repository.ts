@@ -1,4 +1,4 @@
-import { shows } from '../data/shows';
+import { Show } from '../entities/show.js';
 
 export class ShowRepository {
 	static shows = [
@@ -20,7 +20,6 @@ export class ShowRepository {
 	}
 
 	filterShowsByTitleAndReleaseYear(title: string, releaseYear: number) {
-        console.log('title/release:', title, releaseYear);
 		return ShowRepository.shows.filter(
 			x =>
 				(title ? x.title.includes(title) : true) &&
@@ -28,5 +27,10 @@ export class ShowRepository {
 		);
 	}
 
-	add() {}
+	add(show: Omit<Show, 'id'>) {
+		let nextId = Math.max(...ShowRepository.shows.map(x => x.id), 0) + 1;
+		let fullShow = { ...show, id: nextId };
+		ShowRepository.shows.push(fullShow);
+		return fullShow;
+	}
 }
