@@ -1,7 +1,6 @@
-import { shows } from "../data/shows.js";
-
 export const resolvers = {
   Query: {
-    bestShow: () => shows[0],
+    bestShow: (parent, args, context) => context.showRepository.getAll()[0],
+    shows: (parent, args, context) => context.showRepository.getAll(),
   },
 };

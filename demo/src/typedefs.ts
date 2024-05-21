@@ -6,5 +6,6 @@ export const typeDefs = `
 
   type Query {
     bestShow: Show!
+    shows: [Show!]!
   }
 `;
