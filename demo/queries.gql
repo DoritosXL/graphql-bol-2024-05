@@ -1,0 +1,29 @@
+query ($showByIdId: Int!, $input: FilterShowsByTitleAndReleaseYearInput!) {
+  bestShow {
+    title
+    releaseYear
+  }
+  shows {
+    id
+    title
+    releaseYear
+
+    episodes {
+      id
+      title
+
+      show {
+        title
+      }
+    }
+  }
+  showById(id: 8) {
+    id
+    title
+    releaseYear
+  }
+  filterShowsByTitleAndReleaseYear(input: $input) {
+    title
+    releaseYear
+  }
+}

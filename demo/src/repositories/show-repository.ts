@@ -16,7 +16,7 @@ export class ShowRepository {
 	}
 
 	getBestShow() {
-		return ShowRepository.shows.find(x => x.title === 'The Gentleman');
+		return ShowRepository.shows.find(x => x.title === 'The Gentlemen');
 	}
 
 	filterShowsByTitleAndReleaseYear(title: string, releaseYear: number) {
