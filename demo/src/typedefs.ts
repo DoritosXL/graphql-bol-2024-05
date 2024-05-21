@@ -16,5 +16,6 @@ export const typeDefs = `
     title: String!
     length: Int!
     showId: Int!
+    show: Show!
   }
 `;

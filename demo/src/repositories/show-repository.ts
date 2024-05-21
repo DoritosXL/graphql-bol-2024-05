@@ -1,3 +1,5 @@
+import { shows } from "../data/shows";
+
 export class ShowRepository {
 	static shows = [
 		{ id: 4, title: 'Baby Reindeer', releaseYear: 2024 },
@@ -7,6 +9,14 @@ export class ShowRepository {
 
 	getAll() {
 		return ShowRepository.shows;
+	}
+
+	getShow(showId: number) {
+		return ShowRepository.shows.find(x => x.id === showId);
+	}
+
+	getBestShow() {
+		return ShowRepository.shows.find(x => x.title === 'The Gentleman');
 	}
 
 	add() {}
