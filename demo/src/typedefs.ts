@@ -2,6 +2,13 @@ export const typeDefs = `
   type Query {
     bestShow: Show!
     shows: [Show!]!
+    showById(id: Int!): Show
+    filterShowsByTitleAndReleaseYear(input: FilterShowsByTitleAndReleaseYearInput!): [Show!]!
+  }
+
+  input FilterShowsByTitleAndReleaseYearInput {
+    title: String
+    releaseYear: Int
   }
 
   type Show {

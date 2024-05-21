@@ -1,4 +1,4 @@
-import { shows } from "../data/shows";
+import { shows } from '../data/shows';
 
 export class ShowRepository {
 	static shows = [
@@ -17,6 +17,15 @@ export class ShowRepository {
 
 	getBestShow() {
 		return ShowRepository.shows.find(x => x.title === 'The Gentleman');
+	}
+
+	filterShowsByTitleAndReleaseYear(title: string, releaseYear: number) {
+        console.log('title/release:', title, releaseYear);
+		return ShowRepository.shows.filter(
+			x =>
+				(title ? x.title.includes(title) : true) &&
+				(releaseYear ? x.releaseYear === releaseYear : true)
+		);
 	}
 
 	add() {}
