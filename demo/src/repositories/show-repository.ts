@@ -1,15 +1,13 @@
 export class ShowRepository {
-    static shows = [
-        { title: 'The Mandalorian', releaseYear: 2019 },
-        { title: 'The Witcher', releaseYear: 2019 },
-    ];
+	static shows = [
+		{ id: 4, title: 'Baby Reindeer', releaseYear: 2024 },
+		{ id: 8, title: 'The Witcher', releaseYear: 2019 },
+		{ id: 15, title: 'The Gentlemen', releaseYear: 2023 },
+	];
 
-    getAll() {
-        console.log('getting shows from repo');
-        return ShowRepository.shows;
-    }
+	getAll() {
+		return ShowRepository.shows;
+	}
 
-    add() {
-
-    }
+	add() {}
 }

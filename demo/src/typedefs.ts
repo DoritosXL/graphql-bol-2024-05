@@ -1,11 +1,20 @@
 export const typeDefs = `
-  type Show {
-    title: String!
-    releaseYear: Int!
-  }
-
   type Query {
     bestShow: Show!
     shows: [Show!]!
+  }
+
+  type Show {
+    id: ID!
+    title: String!
+    releaseYear: Int!
+    episodes: [Episode!]!
+  }
+
+  type Episode {
+    id: ID!
+    title: String!
+    length: Int!
+    showId: Int!
   }
 `;
