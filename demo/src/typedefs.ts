@@ -5,6 +5,7 @@ export const typeDefs = `
     showById(id: Int!): Show
     filterShowsByTitleAndReleaseYear(input: FilterShowsByTitleAndReleaseYearInput!): [Show!]!
     showsByGenre(genre: Genre!): [Show!]!
+    episodes: [Episode!]!
   }
 
   type Mutation {

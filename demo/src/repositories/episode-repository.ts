@@ -7,6 +7,10 @@ export class EpisodeRepository {
 		{ id: 42, title: 'Episode 2', length: 45, showId: 4 },
 	];
 
+	getAll() {
+		return EpisodeRepository.episodes;
+	}
+
 	getEpisodesForShow(showId: number) {
 		return EpisodeRepository.episodes.filter(x => x.showId === showId);
 	}

@@ -14,4 +14,7 @@ export const Query = {
 	filterShowsByTitleAndReleaseYear(parent, args, ctx: ShowContext) {
 		return ctx.showRepository.filterShowsByTitleAndReleaseYear(args.input.title, args.input.releaseYear);
 	},
+	episodes(parent, args, ctx: ShowContext) {
+		return ctx.episodeRepository.getAll();
+	},
 };

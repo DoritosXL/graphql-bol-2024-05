@@ -11,6 +11,11 @@ export class ShowRepository {
 		return ShowRepository.shows;
 	}
 
+	getShowsByIds(ids: readonly number[]) {
+		console.log('[repo] getShowsByIds');
+		return ShowRepository.shows.filter(x => ids.includes(x.id));
+	}
+
 	getShow(showId: number) {
 		return ShowRepository.shows.find(x => x.id === showId);
 	}
