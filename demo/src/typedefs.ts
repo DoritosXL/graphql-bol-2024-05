@@ -4,6 +4,7 @@ export const typeDefs = `
     shows: [Show!]!
     showById(id: Int!): Show
     filterShowsByTitleAndReleaseYear(input: FilterShowsByTitleAndReleaseYearInput!): [Show!]!
+    showsByGenre(genre: Genre!): [Show!]!
   }
 
   type Mutation {
@@ -25,6 +26,7 @@ export const typeDefs = `
     title: String!
     releaseYear: Int!
     episodes: [Episode!]!
+    genre: Genre!
   }
 
   type Episode {
@@ -33,5 +35,11 @@ export const typeDefs = `
     length: Int!
     showId: Int!
     show: Show!
+  }
+
+  enum Genre {
+    HORROR
+    THRILLER
+    STALKING
   }
 `;

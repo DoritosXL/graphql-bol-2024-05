@@ -1,7 +1,7 @@
 import { ApolloServer } from '@apollo/server';
 import { startStandaloneServer } from '@apollo/server/standalone';
 import { typeDefs } from './typedefs.js';
-import { resolvers } from './resolvers/query.js';
+import { resolvers } from './resolvers/resolvers.js';
 import { ShowRepository } from './repositories/show-repository.js';
 import { EpisodeRepository } from './repositories/episode-repository.js';
 import { ShowContext } from './typings/show-context.js';

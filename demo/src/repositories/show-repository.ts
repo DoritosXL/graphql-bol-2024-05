@@ -1,10 +1,10 @@
 import { Show } from '../entities/show.js';
 
 export class ShowRepository {
-	static shows = [
-		{ id: 4, title: 'Baby Reindeer', releaseYear: 2024 },
-		{ id: 8, title: 'The Witcher', releaseYear: 2019 },
-		{ id: 15, title: 'The Gentlemen', releaseYear: 2023 },
+	static shows: Show[] = [
+		{ id: 4, title: 'Baby Reindeer', releaseYear: 2024, genre: 's' },
+		{ id: 8, title: 'The Witcher', releaseYear: 2019, genre: 't' },
+		{ id: 15, title: 'The Gentlemen', releaseYear: 2023, genre: 'h' },
 	];
 
 	getAll() {
