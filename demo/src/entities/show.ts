@@ -1,6 +1,5 @@
-export interface Show {
-    id: number;
-    title: string;
-    releaseYear: number;
-    genre: 'h' | 't' | 's';
+import { GeneralShow } from './general-show';
+
+export interface Show extends GeneralShow {
+	isLive: boolean;
 }

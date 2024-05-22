@@ -1,11 +1,20 @@
 export const typeDefs = `
+  interface GeneralShow {
+    id: ID!
+    title: String!
+    releaseYear: Int!
+    episodes: [Episode!]!
+    genre: Genre!
+  }
+
   type Query {
     bestShow: Show!
-    shows: [Show!]!
+    shows: [GeneralShow!]! # @authorize(policy: "ADMIN")
     showById(id: Int!): Show
     filterShowsByTitleAndReleaseYear(input: FilterShowsByTitleAndReleaseYearInput!): [Show!]!
     showsByGenre(genre: Genre!): [Show!]!
     episodes: [Episode!]!
+    me: String!
   }
 
   type Mutation {
@@ -22,12 +31,22 @@ export const typeDefs = `
     releaseYear: Int
   }
 
-  type Show {
+  type Show implements GeneralShow {
     id: ID!
     title: String!
     releaseYear: Int!
     episodes: [Episode!]!
     genre: Genre!
+    isLive: Boolean!
+  }
+
+  type StreamingShow implements GeneralShow {
+    id: ID!
+    title: String!
+    releaseYear: Int!
+    episodes: [Episode!]!
+    genre: Genre!
+    isInteractive: Boolean! # Black Mirror Bandersnatch
   }
 
   type Episode {

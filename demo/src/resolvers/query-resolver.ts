@@ -4,7 +4,7 @@ export const Query = {
 	bestShow(parent, args, ctx: ShowContext) {
 		return ctx.showRepository.getBestShow();
 	},
-	shows(parent, args, ctx: ShowContext) {
+	shows(parent, args, ctx: ShowContext) {	
 		console.log('show repo:', ctx.showRepository);
 		return ctx.showRepository.getAll();
 	},
@@ -17,4 +17,7 @@ export const Query = {
 	episodes(parent, args, ctx: ShowContext) {
 		return ctx.episodeRepository.getAll();
 	},
+	me(parent, args, ctx: ShowContext) {
+		return ctx.user;
+	}
 };

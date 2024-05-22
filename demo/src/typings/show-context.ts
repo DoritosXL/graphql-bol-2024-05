@@ -6,4 +6,5 @@ export interface ShowContext {
     showRepository: ShowRepository;
     episodeRepository: EpisodeRepository;
     showDataLoader: ShowDataLoader;
+    user: string | null;
 }
