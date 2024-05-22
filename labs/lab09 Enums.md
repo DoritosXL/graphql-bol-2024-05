@@ -1,4 +1,4 @@
-# Lab 10 - Enums
+# Lab 9 - Enums
 
 Add a non-`null`able `string` property `Status` to `User`. This property will hold values:
 

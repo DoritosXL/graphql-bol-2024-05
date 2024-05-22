@@ -1,4 +1,4 @@
-# Lab 9 - Integration Testing
+# Lab 8 - Integration Testing
 
 As with most code, testing is important. Your GraphQL endpoints included. For testing to be successful, tests should be:
 
