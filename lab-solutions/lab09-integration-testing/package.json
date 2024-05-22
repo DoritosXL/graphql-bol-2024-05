@@ -1,0 +1,26 @@
+{
+  "name": "blogging-app",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "start": "nodemon src/server.js",
+    "test": "node --experimental-vm-modules node_modules/jest/bin/jest.js --runInBand"
+  },
+  "jest": {
+    "testEnvironment": "jest-environment-node",
+    "transform": {}
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@prisma/client": "^3.6.0",
+    "apollo-server": "^3.5.0",
+    "graphql": "^15.7.2"
+  },
+  "devDependencies": {
+    "jest": "^27.4.3"
+  }
+}

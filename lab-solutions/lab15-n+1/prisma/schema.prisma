@@ -1,0 +1,57 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "sqlite"
+  url      = env("DATABASE_URL")
+}
+
+model Blogs {
+  id                 Int                @id @default(autoincrement())
+  title              String?
+  content            String?
+  published          Int?
+  price              Decimal?
+  availableDate      String?
+  availableInCountry Int?
+  userid             Int
+  creator            Users              @relation(fields: [userid], references: [id], onDelete: NoAction, onUpdate: NoAction)
+  countries          BlogsOnCountries[]
+  comments           Comments[]
+}
+
+model BlogsOnCountries {
+  blogid    Int
+  countryid Int
+  blog      Blogs     @relation(fields: [blogid], references: [id], onDelete: NoAction, onUpdate: NoAction)
+  country   Countries @relation(fields: [countryid], references: [id], onDelete: NoAction, onUpdate: NoAction)
+
+  @@id([blogid, countryid])
+}
+
+model Comments {
+  id            Int     @id @default(autoincrement())
+  content       String?
+  published     Int?
+  blogid        Int
+  userid        Int
+  blog          Blogs   @relation(fields: [blogid], references: [id], onDelete: NoAction, onUpdate: NoAction)
+  commentator   Users   @relation(fields: [userid], references: [id], onDelete: NoAction, onUpdate: NoAction)
+}
+
+model Countries {
+  id      Int                @id @default(autoincrement())
+  name    String?
+  blogs   BlogsOnCountries[]
+}
+
+model Users {
+  id        Int        @id @default(autoincrement())
+  firstname String
+  email     String?
+  birthdate String?
+  status    String     @default("a")
+  blogs     Blogs[]
+  comments  Comments[]
+}
